@@ -38,8 +38,16 @@ var scoreLimit = 90;
 topScores = _.select(scores, function (score) {
     return score > scoreLimit;
 });
-var container = document.getElementById("container");
-    container.innerHTML = topScores;
+
+function printOutInformation(elem, indx, list) {
+    var container = document.getElementById("container");
+    var information = "<p>" + elem + "</p>";
+    container.innerHTML += information;
+}
+
+window.addEventListener("load", function(e) {
+    _.each(topScores, printOutInformation);
+});
 </script>
 </body>
 </html>
