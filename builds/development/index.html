@@ -1,13 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>day #</title>
-  <link rel="stylesheet" href="css/myStyle.css">
-  <link rel="stylesheet" href="css/anotherstyle.css">
+    <meta charset="UTF-8">
+    <title>day #</title>
+    <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/anotherstyle.css">
+    <style>
+        .studentRec {
+            border: 1px solid #777;
+            margin: 4px;
+            padding: 4px;
+            font-size: 14px;
+            background: #cccccc;
+        }
+        .passingStudent {
+            background: lightgreen;
+        }
+        .failingStudent {
+            background: pink;
+        }
+    </style>
 </head>
 <body>
+<h1>I got a array of this:</h1>
+<p>var scores = [33,44,55,66,77,88,99,222];</p>
+<h1>Then use the underscore function _.select to pick the numbers bigger than 90 in this array and I got:</h1>
+<h3>OMG, this font is really hard to read</h3>
+<div id="container"></div>
 
 <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<script src="js/lib/underscore.js"></script>
+<script src="SampleData.js"></script>
+<script>
+var scores = [33,44,55,66,77,88,99,222];
+var topScores = [];
+var scoreLimit = 90;
+topScores = _.select(scores, function (score) {
+    return score > scoreLimit;
+});
+var container = document.getElementById("container");
+    container.innerHTML = topScores;
+</script>
 </body>
 </html>
